@@ -16,11 +16,19 @@ let touchendY = 0;
 
 
 let display : Display;
+let current = 0;
+
+enum itemPlacement {
+    "Cube" = 0,
+    "Cone" = 1,
+    "Torus" = 2,
+    "Sphere" = 3,
+    "Dollos" = 4,
+}
 
 const Showcase = () => {
 
     const ref = useRef() as MutableRefObject<HTMLCanvasElement>;
-    let current = 0;
 
     useEffect(() => {
       if(ref.current){
@@ -128,13 +136,7 @@ const Showcase = () => {
         return "Cube"
     }
 
-    enum itemPlacement {
-        "Cube" = 0,
-        "Cone" = 1,
-        "Torus" = 2,
-        "Sphere" = 3,
-        "Dollos" = 4,
-    }
+
 
     return (
         <div style={{ backgroundColor: `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`, transition : 'all 1s'}}>
