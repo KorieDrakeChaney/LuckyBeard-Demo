@@ -1,6 +1,6 @@
 module.exports = {
-  // assetPrefix: '/LuckyBeard-Demo/',
-  // basePath : "/LuckyBeard-Demo", 
+  assetPrefix: '/LuckyBeard-Demo/',
+  basePath : "/LuckyBeard-Demo", 
   webpack: (config, options) => {
     config.module.rules.push({
         test: /\.(glsl|vs|fs|vert|frag)$/,
