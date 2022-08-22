@@ -56,12 +56,11 @@ const Showcase = () => {
         ref.current.addEventListener('touchend', function(event : TouchEvent) {
             if (touchendX < touchstartX) {
                 display.toggleRight();
-                setItem(getItem((display.currentIndex + 1) % 5));
-                
+                setItem(getItem((display.currentIndex + 1) % 5))
             }
-            if (touchendX > touchstartX) {
+            else if (touchendX > touchstartX) {
                 display.toggleLeft();
-                setItem(getItem(display.currentIndex == 0 ? 4 : display.currentIndex - 1))
+                setItem(getItem(display.currentIndex == 0 ? 4 : display.currentIndex - 1)) 
             }
             
         }, false); 
@@ -69,7 +68,7 @@ const Showcase = () => {
         ref.current.addEventListener("wheel", (event) => {
             if(event.deltaY < 0  && !display.isAnimating){
                 display.toggleLeft();
-                setItem(getItem(display.currentIndex == 0 ? 4 : display.currentIndex - 1))
+                setItem(getItem(display.currentIndex == 0 ? 4 : display.currentIndex - 1)) 
                 return;
             }
             else if(!display.isAnimating) { 
